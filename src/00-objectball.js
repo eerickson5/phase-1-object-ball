@@ -162,7 +162,7 @@ winningTeam = () => {
     return teamHPoints > teamAPoints ? teamNamesArray[0] : teamNamesArray[1];
 }
 playerWithLongestName = () => {
-    let namesArray = returnTeamProperties("all", "name");
+    const namesArray = returnTeamProperties("all", "name");
     let longestName = namesArray[0];
     for (let name of namesArray) {
         if (name.length > longestName.length){
@@ -171,3 +171,6 @@ playerWithLongestName = () => {
     }
     return longestName;
 }
+
+//Super Bonus Function
+doesLongNameStealATon = () => playerWithLongestName() === returnPropertyBasedOnHighest("steals", "name") ? true : false;
